@@ -4,15 +4,18 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 import Login from './components/Login';
+import Homepage from './components/Homepage';
 
 export default function App() {
-  return(
+  return (
     <BrowserRouter>
       <Switch>
-        <Route path='/' element={ <Login />} />
-        {/* add homepage route here*/}
+        <Route exact path='/' element={<Login />}>
+          </Route>
+        <Route exact path='/homepage' element={<Homepage />}>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
