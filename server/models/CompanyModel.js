@@ -1,7 +1,7 @@
-onst { Pool } = require("pg");
+const { Pool } = require("pg");
 
 const myURI =
-	//"postgres://smsutrfc:PzE5eX57kF2e_B7WuAUlyRITeKldLIia@castor.db.elephantsql.com/smsutrfc";
+	//"";
 
 
 //process.env.PG_URI to falsey
