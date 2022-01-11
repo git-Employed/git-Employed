@@ -21,7 +21,7 @@ passport.use(
       // Note: add the client secret and client id to .env file
       clientID: "685f0e0a21587f473ca1",
       clientSecret: "facb1fb26ecd809696b690502f1894765cae8fa0",
-      callbackURL: "http://10.0.0.59:8080/auth/github/callback"
+      callbackURL: "http://localhost:8080/auth/github/callback"
     },
     function(accessToken, refreshToken, profile, done) {
       User.findOrCreate({ githubId: profile.id }, function (err, user) {
@@ -43,11 +43,7 @@ app.get(
     console.log('ENTERING AUTHENTICATION')
     next();
   },
-  passport.authenticate('github', { scope: ['read:user'] }),
-  // According to example linked from passport docs, this will never be called
-  (res, req) => {
-    console.log('EXITING AUTHENTICATION')
-  }
+  passport.authenticate('github', { scope: ['read:user'] })
 );
 
 //endpoint that github sends a successful auth back to
@@ -60,7 +56,8 @@ app.get(
   passport.authenticate('github', { failureRedirect: "/auth/github/error" }),
   (req, res) => {
     // If the redirect was successful, redirect to homepage
-    res.redirect("/");
+    // May be part of the problem here, could need to be another page
+    // res.redirect("/");
   }
 );
 
