@@ -17,6 +17,7 @@ module.exports = {
 	},
 };
 
+//CREATE TABLE CARDS
 // CREATE TABLE cards(
 //     card_id INT GENERATED ALWAYS AS IDENTITY,
 //     PRIMARY KEY(card_id),
@@ -28,8 +29,7 @@ module.exports = {
 //     created_at TIMESTAMP DEFAULT NOW()
 // );
 
-//INSERT INTO cards(title) VALUES('Spotify');
-
+//INSERT INTO cards
 // INSERT INTO cards (title, salary, vibe_check, location, status)
 // VALUES ('Spotify', '$120000', 'nice', 'New York City', 'pending')
 // RETURNING *;
@@ -45,3 +45,6 @@ module.exports = {
 // INSERT INTO cards (title, salary, vibe_check, location, status)
 // VALUES ('LinkedIn', '$140,000', 'nice', 'Remote', 'Interested')
 // RETURNING *;
+
+//DELETE
+//DELETE FROM tasks WHERE card_id=4;

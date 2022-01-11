@@ -17,6 +17,16 @@ app.get("/cards", cardController.getCards, (req, res) => {
 	return res.status(200).json(res.locals.cards);
 });
 
+app.post("/cards", cardController.postCards, (req, res) => {
+	console.log(res.locals.jobPosting);
+	return res.status(200).json(res.locals.jobPosting);
+});
+
+app.delete("/cards", cardController.deleteCards, (req, res) => {
+	console.log(res.locals.goodbye);
+	return res.status(200).json(res.locals.goodbye);
+});
+
 app.use((err, req, res, next) => {
 	const defaultErr = {
 		log: "Express error handler caught unknown middleware error",
