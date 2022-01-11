@@ -15,29 +15,30 @@ export default function CardContainer() {
     dispatch(getCardsActionCreator());
     //make sure to change this to whatever the data looks like
   }, [cardDetails.cards.isLoaded]);
-  console.log(cardDetails.cards.cardList);
+
+  console.log("console logging from Card Container", cardDetails.cards.cardList);
   const interested = [];
   const pending = [];
   const offered = [];
   const archive = [];
   const interestedCards = cardDetails.cards.cardList.filter((card) => (
-    card.status === 'Interested'
+    card.status.toLowerCase() === 'interested'
   ));
-  interested.push(interestedCards)
+  interested.push(interestedCards);
   // console.log(interestedCards);
 
   const pendingCards = cardDetails.cards.cardList.filter((card) => (
-    card.status === 'Pending'
+    card.status.toLowerCase() === 'pending'
   ))
   pending.push(pendingCards);
 
   const offeredCards = cardDetails.cards.cardList.filter((card) => (
-    card.status === 'Offered'
+    card.status.toLowerCase() === 'offered'
   ))
   offered.push(offeredCards);
 
   const archiveCards = cardDetails.cards.cardList.filter((card) => (
-    card.status === 'Archive'
+    card.status.toLowerCase() === 'archive'
   ))
   archive.push(archiveCards);
 

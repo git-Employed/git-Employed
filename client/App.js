@@ -7,7 +7,9 @@ import {
 // import { render } from 'react-dom';
 import Login from './components/Login';
 import Homepage from './components/Homepage';
-import styles from './styles.css'
+import Form from './components/Form';
+import styles from './styles.css';
+// import style from './modal.css';
 
 export default function App() {
   return (
@@ -17,6 +19,7 @@ export default function App() {
         </Route>
         <Route exact path='/homepage' element={<Homepage />}>
         </Route>
+        <Route path='/form' element={<Form />}></Route>
       </Switch>
     </BrowserRouter>
   );

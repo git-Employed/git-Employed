@@ -1,8 +1,8 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require("path");
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './client/index.html',
-  filename: './index.html',
+	template: "./client/index.html",
+	filename: "./index.html",
 });
 module.exports = {
   entry: './client/index.js',
@@ -35,11 +35,11 @@ module.exports = {
     static: {
       publicPath: path.resolve(__dirname, 'dist'),
     },
-    // historyApiFallback: true,
+    historyApiFallback: true,
     port: 8080,
     proxy: {
       '/': 'http://localhost:3000',
     },
-    historyApiFallback: true,
+    // historyApiFallback: true,
   },
 };
