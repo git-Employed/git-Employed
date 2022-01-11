@@ -1,42 +1,42 @@
 {
-  "name": "git-Employed",
-  "version": "1",
-  "main": "/index.js",
-  "repository": "https://github.com/git-Employed/git-Employed.git",
-  "author": "Team Charizard",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "start": "cross-env NODE_ENV=production node server/server.js",
-    "build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development concurrently  \"nodemon server/server.js\" \"webpack-dev-server --open\""
-  },
-  "dependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
-    "@babel/preset-react": "^7.16.7",
-    "babel-loader": "^8.2.3",
-    "concurrently": "^7.0.0",
-    "css-loader": "^6.5.1",
-    "express": "^4.17.2",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "nodemon": "^2.0.15",
-    "pg": "^8.7.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "redux": "^4.1.2",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1",
-    "sass-loader": "^12.4.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.65.0",
-    "webpack-dev-server": "^4.7.2"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3",
-    "webpack-cli": "^4.9.1"
-  }
+	"name": "git-Employed",
+	"version": "1",
+	"main": "/index.js",
+	"repository": "https://github.com/git-Employed/git-Employed.git",
+	"author": "Team Charizard",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"start": "cross-env NODE_ENV=production node server/server.js",
+		"build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+		"dev": "cross-env NODE_ENV=development concurrently  \"nodemon server/server.js\" \"webpack-dev-server --open\""
+	},
+	"dependencies": {
+		"@babel/core": "^7.16.7",
+		"@babel/preset-env": "^7.16.7",
+		"@babel/preset-react": "^7.16.7",
+		"babel-loader": "^8.2.3",
+		"concurrently": "^7.0.0",
+		"css-loader": "^6.5.1",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.2",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.5.0",
+		"nodemon": "^2.0.15",
+		"pg": "^8.7.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-redux": "^7.2.6",
+		"redux": "^4.1.2",
+		"redux-devtools-extension": "^2.13.9",
+		"redux-thunk": "^2.4.1",
+		"sass-loader": "^12.4.0",
+		"style-loader": "^3.3.1",
+		"webpack": "^5.65.0",
+		"webpack-dev-server": "^4.7.2"
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.3",
+		"webpack-cli": "^4.9.1"
+	}
 }
-
