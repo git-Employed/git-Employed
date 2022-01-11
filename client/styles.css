@@ -1,0 +1,46 @@
+body, html {
+  height: 100vh;
+}
+
+#app {
+  height: 100%;
+}
+
+#cardList-container {
+  display: grid;
+  grid-template-areas: 
+  'Interested Pending Offered Archived'
+  'Interested Pending Offered Archived'
+  'Interested Pending Offered Archived';
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+  justify-items: center;
+  height: 100%;
+}
+
+#title {
+  text-align: center;
+}
+
+.Interested-container {
+  grid-area: Interested;
+  border-right: solid black 1px;
+  padding-right: 1rem;
+  height: 100%
+}
+
+.Pending-container {
+  grid-area: Pending;
+  border-right: solid black 1px;
+  padding-right: 1rem;
+}
+
+.Offered-container {
+  grid-area: Offered;
+  border-right: solid black 1px;
+  padding-right: 1rem;
+}
+
+.Archive-container {
+  grid-area: Archived;
+}

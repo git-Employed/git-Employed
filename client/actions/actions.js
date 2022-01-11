@@ -13,7 +13,48 @@ import * as types from '../constants/actionTypes';
 //   }
 // }
 
-export const getCardsActionCreator = (input) => ({
+export const getCardsActionCreator = () => ({
   type: types.GET_CARDS,
-  payload: input
+  payload: [
+    {
+      id: 1,
+      title: 'Interested',
+      status: 'Interested',
+    },
+    {
+      id: 1,
+      title: 'Interested2',
+      status: 'Interested',
+    },
+    {
+      id: 2,
+      title: 'Pending',
+      status: 'Pending',
+    },
+    {
+      id: 2,
+      title: 'Pending2',
+      status: 'Pending',
+    },
+    {
+      id: 3,
+      title: 'Offered',
+      status: 'Offered',
+    },
+    {
+      id: 3,
+      title: 'Offered2',
+      status: 'Offered',
+    },
+    {
+      id: 4,
+      title: 'Archive',
+      status: 'Archive',
+    },
+    {
+      id: 4,
+      title: 'Archive2',
+      status: 'Archive',
+    },
+  ]
 })
