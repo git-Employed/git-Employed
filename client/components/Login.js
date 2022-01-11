@@ -8,7 +8,7 @@ export default function Login() {
         "Content-Type": "application/json",
       }
     };
-    fetch("https://github.com/login/oauth/authorize", request)
+    fetch('/auth/github', request)
       .then
   };
 
