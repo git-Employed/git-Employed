@@ -11,6 +11,26 @@ export const getCardsActionCreator = () => {
   }
 }
 
+export const enterCompanyActionCreator = (input) => ({
+  type: types.ENTER_COMPANY,
+  payload: input
+})
+export const enterTitleActionCreator = (input) => ({
+  type: types.ENTER_TITLE,
+  payload: input
+})
+export const enterSalaryActionCreator = (input) => ({
+  type: types.ENTER_SALARY,
+  payload: input
+})
+export const enterEnvironmentActionCreator = (input) => ({
+  type: types.ENTER_ENVIRONMENT,
+  payload: input
+})
+export const enterLocationActionCreator = (input) => ({
+  type: types.ENTER_LOCATION,
+  payload: input
+})
 
 export const openModalActionCreator = (data) => ({
   type: types.OPEN_MODAL,

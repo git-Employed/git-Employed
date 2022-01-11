@@ -1,24 +1,27 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { enterCompanyActionCreator, enterTitleActionCreator, enterSalaryActionCreator, enterEnvironmentActionCreator, enterLocationActionCreator, openModalActionCreator} from "../actions/actions";
 
 export default function Form() {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate('/homepage');
+  }
   return (
-    <Form>
-      <textarea type='text' ></textarea>
-      <textarea type='text' ></textarea>
-      <textarea type='text' ></textarea>
-      <textarea type='text' ></textarea>
-      <textarea type='text' ></textarea>
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-          <a href="#">Interested</a>
-          <a href="#">Pending</a>
-          <a href="#">Offered</a>
-          <a href="#">Archive</a>
-        </div>
-      </div>
-    </Form>
+    <form id="form-container">
+      <label for="category">Choose a category:</label>
+      <select name="category" id="category" className={'form-items'}>
+        <option value="Interested">Interested</option>
+        <option value="Pending">Pending</option>
+        <option value="Offered">Offered</option>
+        <option value="Archive">Archive</option>
+      </select><br></br>
+      <label>Company:</label><textarea type='text' ></textarea><br></br>
+      <label>Job Title:</label><textarea type='text' ></textarea><br></br>
+      <label>Salary:</label><textarea type='text' ></textarea><br></br>
+      <label>Work Environment:</label><textarea type='text' ></textarea><br></br>
+      <label>Location:</label><textarea type='text' ></textarea><br></br>
+      <button onClick={handleNavigate}>Add Card</button>
+    </form>
   )
 }
