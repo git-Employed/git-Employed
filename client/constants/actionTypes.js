@@ -1,0 +1,7 @@
+export const GET_CARDS = 'GET_CARDS';
+export const ENTER_COMPANY= 'ENTER_COMPANY';
+export const ENTER_TITLE= 'ENTER_TITLE';
+export const ENTER_SALARY= 'ENTER_SALARY';
+export const ENTER_ENVIRONMENT= 'ENTER_ENVIRONMENT';
+export const ENTER_LOCATION= 'ENTER_LOCATION';
+export const OPEN_MODAL = 'OPEN_MODAL';

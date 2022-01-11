@@ -8,8 +8,8 @@ cardController.getCards = (req, res, next) => {
 
 	db.query(queryString)
 		.then((allCards) => {
-			res.locals.cards = allCards;
-			console.log(res.locals.cards);
+			res.locals.cards = allCards.rows;
+			console.log("logging from get cards controller", res.locals.cards);
 			return next();
 		})
 		.catch((err) => {

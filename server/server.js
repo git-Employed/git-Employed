@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 	res.status(200).sendFile(path.join(__dirname, "../client/index.html"));
 });
 app.get("/cards", cardController.getCards, (req, res) => {
-	console.log(res.locals.cards);
+	// console.log(res.locals.cards);
 	return res.status(200).json(res.locals.cards);
 });
 
