@@ -32,7 +32,7 @@ export default function Cards(props) {
       style={{ background: colors[Math.floor(Math.random() * 5)] }}
     >
       {/* <section className="card-headerTitle"> */}
-      <CompanySection company={props.card.company} />
+      <CompanySection company={props.card.company} cardInfo={props.card} />
       <TitleSection title={props.card.title} />
       {/* </section> */}
       {/* <h4>Salary:</h4> */}

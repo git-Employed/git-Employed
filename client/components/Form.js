@@ -52,7 +52,7 @@ export default function Form() {
         dispatch(enterEnvironmentActionCreator(e.target.value))}></input><br></br>
       <label>Interview Notes:</label><textarea onChange={(e) =>
         dispatch(enterInterviewActionCreator(e.target.value))}></textarea><br></br>
-      <button onClick={handleSubmit}>Add Card</button>
+      <button id='add-card' onClick={handleSubmit}>Add Card</button>
     </div>
   )
 }

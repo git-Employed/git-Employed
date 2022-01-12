@@ -36,15 +36,15 @@ export const submitFormActionCreator = (card) => {
   }
 }
 
-export const updateCompanyActionCreator = (card) => {
+export const updateCompanyActionCreator = (card, id) => {
   return(dispatch) => {
-    fetch('/api/cards', {
+    fetch(`/api/cards/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        company: card.company,
+        card
       }),
     })
     .then((response) => {

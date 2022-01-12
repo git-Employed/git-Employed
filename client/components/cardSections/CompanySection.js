@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateCompanyActionCreator } from '../../actions/actions';
 
 function EditModeCompany(props) {
@@ -35,13 +35,23 @@ function NonEditModeCompany(props) {
 export default function CompanySection(props) {
   const dispatch = useDispatch();
   const [company, setCompany] = useState(props.company);
+  // const currentState = useSelector((state) => state);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
+    console.log('logging current state after clicking in company section', props.cardInfo)
     const newCompany = document.getElementById('performEdit').value;
     setCompany(newCompany);
   //dispatch the newCompany to action
-    dispatch(updateCompanyActionCreator(newCompany));
+    const test= {
+      company: newCompany,
+      title: props.cardInfo.title,
+      salary: props.cardInfo.salary,
+      location: props.cardInfo.location,
+      environment: props.cardInfo.environment,
+      status: props.cardInfo.status
+    }
+    dispatch(updateCompanyActionCreator(test, props.cardInfo.card_id));
     console.log(newCompany, 'newCompany');
     setEditMode(!editMode);
   };

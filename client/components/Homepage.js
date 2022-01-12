@@ -1,6 +1,6 @@
 import React from "react";
 import CardContainer from "./CardContainer";
-// import Form from "./Form";
+import Form from "./Form";
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ export default function Homepage() {
   ];
   return (
     <div id='homepage-container'>
-      <button onClick={handleNavigate}><Link to="/form">+</Link></button>
+      <button id='create-button' onClick={handleNavigate}  style={{background: colors[Math.floor(Math.random() * 5)]}}><Link to="/form">Create</Link></button>
       <CardContainer />
     </div>
   )
