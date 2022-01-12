@@ -17,68 +17,64 @@ module.exports = {
 	},
 };
 
-//CREATE TABLE CARDS
-// CREATE TABLE cards(
-//     card_id INT GENERATED ALWAYS AS IDENTITY,
-//     PRIMARY KEY(card_id),
-//     company VARCHAR(50) NOT NULL,
-//     title VARCHAR(50) NOT NULL,
-//     salary BIGINT,
-//     location VARCHAR(50) NOT NULL,
-//      vibe_check VARCHAR(50),
-//     status VARCHAR(50) NOT NULL,
-//     interview VARCHAR(100),
-//     created_at TIMESTAMP DEFAULT NOW()
-// );
+//creating a card table with a foriegn key of users
+//CREATE TABLE cards(
+//card_id INT GENERATED ALWAYS AS IDENTITY,
+// user_name VARCHAR,
+// PRIMARY KEY(card_id),
+// FOREIGN KEY (user_name) REFERENCES users(user_name),
+// company VARCHAR(50) NOT NULL,
+// title VARCHAR(50) NOT NULL,
+// salary BIGINT,
+// location VARCHAR(50) NOT NULL,
+// vibe_check VARCHAR(50),
+// status VARCHAR(50) NOT NULL,
+// interview VARCHAR(100),
+// created_at TIMESTAMP DEFAULT NOW()
+//  );
 
-//insert into cards
-// INSERT INTO cards (company,title, salary,location,vibe_check, status, interview)
-// VALUES ('Spotify', 'Front end engineer', '120,000', 'New York City','nice','pending','phonescreen')
-// RETURNING *;
+// creating a user table
+//CREATE TABLE users(
+// user_name VARCHAR NOT NULL,
+//PRIMARY KEY(user_name),
+//created_at TIMESTAMP DEFAULT NOW()
+//)
 
-//INSERT INTO cards (company, title, salary, location, vibe_check, status, interview)
-//VALUES ('Disney','Frontend Engineer', '150000', 'nice', 'Los Angeles', 'Archive','phone screen')
+//inserting into the users table
+//INSERT INTO users (user_name)
+//VALUES ('AllieMarzieh')
+//RETURNING *;
+
+//posting into the cards table
+
+//INSERT INTO cards (user_name,company, title, salary, location, vibe_check, status, interview)
+//VALUES ( 'AllieMarzieh','Disney','Frontend Engineer', '140000', 'LA', 'chill', 'Archive','recruiter reached out' )
+//RETURNING *;
+
+//INSERT INTO cards (user_name,company, title, salary, location, vibe_check, status, interview)
+//VALUES ( 'AllieMarzieh','Spotify','Frontend Engineer', '180000', 'NYC', 'chill', 'pending','invertBinaryTree: data structures question' )
+//RETURNING *;
+
+//INSERT INTO cards (user_name,company, title, salary, location, vibe_check, status, interview)
+//VALUES ( 'AllieMarzieh','Microsoft','DevOps Engineer', '170000', 'Austin', 'nice', 'pending','phonescreen' )
 //RETURNING *;
 
 //INSERT INTO cards (company, title, salary, location, vibe_check, status, interview)
-//VALUES ('Spotify','Frontend Engineer', '180000', 'nice', 'New York City', 'Offered','invertBinaryTree: given a binary tree, reverse all of the nodes {8}->{5}{10}-> {2}{6}{7}{12} ==>{8}->{10}{5}-> {12}{7}{6}{2}')
+//VALUES ( 'Google','Data Engineer', '140000', 'New York City', 'nice', 'interested', 'Max Depth')
 //RETURNING *;
 
 //INSERT INTO cards (company, title, salary, location, vibe_check, status, interview)
-//VALUES ('Microsoft','DevOps Engineer', '200000', 'Austin', 'nice', 'interested','recruiter reached out to me' )
+//VALUES ( 'Disney','Frontend Engineer', '14000000000', 'LA', 'chill', 'Archive','recruiter reached out' )
 //RETURNING *;
 
-//INSERT INTO cards (company, title, salary, location, vibe_check, status, interview)
-//VALUES ('Google','Data Engineer', '140000', 'New York City', 'nice', 'interested')
+//INSERT INTO cards (user_name,company, title, salary, location, vibe_check, status, interview)
+//VALUES ( 'AllieMarzieh','Toast','Junior Engineer', '90000', 'Boston', 'relaxed', 'pending','noDuplicates:given an array of integers return an array with the duplicates removed' )
 //RETURNING *;
 
-//INSERT INTO cards (company, title, salary, location, vibe_check, status, interview)
-//VALUES ('Toast','Junior Engineer', '90000', 'Boston', 'relaxed', 'pending','noDuplicates:given an array of integers return an array with the duplicates removed' )
-//RETURNING *;
-
-//deleting
+//deleting from the cards table
 //DELETE FROM tasks WHERE card_id=4;
 
-//updating
+//updating the cards table
 //UPDATE cards
 //SET vibe_check = 'unfriendly'
 //WHERE card_id = 4;
-
-//adding columns to an existing table
-// ALTER TABLE cards
-// ADD COLUMN company VARCHAR(50),
-// ADD COLUMN job_description VARCHAR(50) NOT NULL,
-// ADD COLUMN interview_questions VARCHAR(100);
-
-//renaming a columnn
-//ALTER TABLE cards
-// RENAME COLUMN title TO job_description;
-
-//deleting a column
-//ALTER TABLE cards
-//DROP COLUMN job_title;
-
-//updating
-//UPDATE cards
-//SET job_description = 'Front'
-//WHERE course_id = 3
