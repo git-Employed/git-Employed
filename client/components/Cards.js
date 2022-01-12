@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import SalarySection from './cardSections/SalarySection.js';
 import TitleSection from './cardSections/TitleSection.js';
 import CompanySection from './cardSections/CompanySection.js';
@@ -7,18 +7,7 @@ import LocationSection from './cardSections/LocationSection.js';
 import InterviewSection from './cardSections/InterviewSection.js';
 import StatusSection from './cardSections/StatusSection.js';
 
-import { useDispatch, useSelector } from 'react-redux';
-
 export default function Cards(props) {
-  // const dispatch = useDispatch();
-  // const cardDetails = useSelector((state) => state);
-  // console.log("logging modal state in interested card", cardDetails);
-  // const handleModal = (e) => {
-  //   const cards = {
-  //     items: props.card
-  //   }
-  //   dispatch(openModalActionCreator(cards));
-  // }
   const colors = [
     'radial-gradient(#1fe4f5, #3fbafe)',
     'radial-gradient(#fbc1cc, #fa99b2)',

@@ -10,11 +10,25 @@ function EditModeLocation(props) {
         type="text"
         id="performEdit"
       />
-      <button type="submit" onClick={props.performEdit}>
-        Y
+      <button
+        type="submit"
+        onClick={props.performEdit}
+        style={{ background: 'transparent', borderStyle: 'none' }}
+      >
+        <img
+          src="https://res.cloudinary.com/nena/image/upload/v1642008511/git-Employed/check-box-with-check-sign_mgvoex.png"
+          style={{ width: '20px', height: 'auto' }}
+        />
       </button>
-      <button id="open_closeEdit" onClick={props.open_closeEdit}>
-        N
+      <button
+        id="open_closeEdit"
+        onClick={props.open_closeEdit}
+        style={{ background: 'transparent', borderStyle: 'none' }}
+      >
+        <img
+          src="https://res.cloudinary.com/nena/image/upload/v1642010935/git-Employed/close_1_qkztfu.png"
+          style={{ width: '20px', height: 'auto' }}
+        />
       </button>
     </form>
   );
@@ -24,14 +38,22 @@ function NonEditModeLocation(props) {
   return (
     <div className="location-container">
       <p>{props.location}</p>
-      <button onClick={props.open_closeEdit}>E</button>
+      <button
+        onClick={props.open_closeEdit}
+        style={{ background: 'transparent', borderStyle: 'none' }}
+      >
+        <img
+          src="https://res.cloudinary.com/nena/image/upload/v1642008194/git-Employed/writing_3_acbhuc.png"
+          style={{ width: '20px', height: 'auto' }}
+        />
+      </button>
     </div>
   );
 }
 
 export default function LocationSection(props) {
   const dispatch = useDispatch();
-  const [location, setLocation] = useState(props.vibeCheck);
+  const [location, setLocation] = useState(props.location);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
