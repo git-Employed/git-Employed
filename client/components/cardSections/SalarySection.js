@@ -8,11 +8,25 @@ function EditModeSalary(props) {
         type="number"
         id="performEdit"
       />
-      <button type="submit" onClick={props.performEdit}>
-        Y
+      <button
+        type="submit"
+        onClick={props.performEdit}
+        style={{ background: 'transparent', borderStyle: 'none' }}
+      >
+        <img
+          src="https://res.cloudinary.com/nena/image/upload/v1642008511/git-Employed/check-box-with-check-sign_mgvoex.png"
+          style={{ width: '20px', height: 'auto' }}
+        />
       </button>
-      <button id="open_closeEdit" onClick={props.open_closeEdit}>
-        N
+      <button
+        id="open_closeEdit"
+        onClick={props.open_closeEdit}
+        style={{ background: 'transparent', borderStyle: 'none' }}
+      >
+        <img
+          src="https://res.cloudinary.com/nena/image/upload/v1642010935/git-Employed/close_1_qkztfu.png"
+          style={{ width: '20px', height: 'auto' }}
+        />
       </button>
     </form>
   );
@@ -21,8 +35,16 @@ function EditModeSalary(props) {
 function NonEditModeSalary(props) {
   return (
     <div className="salary-container">
-      <p>{props.salary}</p>
-      <button onClick={props.open_closeEdit}>E</button>
+      <p className="salaryText">${props.salary}/Year</p>
+      <button
+        onClick={props.open_closeEdit}
+        style={{ background: 'transparent', borderStyle: 'none' }}
+      >
+        <img
+          src="https://res.cloudinary.com/nena/image/upload/v1642008194/git-Employed/writing_3_acbhuc.png"
+          style={{ width: '20px', height: 'auto' }}
+        />
+      </button>
     </div>
   );
 }

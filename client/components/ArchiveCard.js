@@ -2,7 +2,7 @@ import React from 'react';
 import Cards from './Cards';
 
 export default function ArchiveCard(props) {
-  console.log(props.card);
+  // console.log(props.card);
   return (
     <div className="Archive-container">
       <h1 id="archived-title">Archived</h1>
