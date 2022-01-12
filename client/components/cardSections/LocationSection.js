@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 function EditModeLocation(props) {
   return (
-    <form>
+    <form className="location-container">
       <input
         name="location"
         placeholder={props.location}
@@ -20,7 +20,7 @@ function EditModeLocation(props) {
 
 function NonEditModeLocation(props) {
   return (
-    <div>
+    <div className="location-container">
       <p>{props.location}</p>
       <button onClick={props.open_closeEdit}>E</button>
     </div>

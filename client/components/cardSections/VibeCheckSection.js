@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 function EditModeVibeCheckSection(props) {
   return (
-    <form>
+    <form className="vibeCheck-container">
       <input
         name="vibeCheckSection"
         placeholder={props.vibeCheck}
@@ -20,7 +20,7 @@ function EditModeVibeCheckSection(props) {
 
 function NonEditModeVibeCheckSection(props) {
   return (
-    <div>
+    <div className="vibeCheck-container">
       <p>{props.vibeCheck}</p>
       <button onClick={props.open_closeEdit}>E</button>
     </div>

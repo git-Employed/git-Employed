@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-function EditModeCompany(props) {
+function EditModeStatus(props) {
   return (
-    <form className="company-container">
+    <form className="status-container">
       <input
-        name="company"
-        placeholder={props.company}
+        name="status"
+        placeholder={props.status}
         type="text"
         id="performEdit"
       />
@@ -18,25 +18,23 @@ function EditModeCompany(props) {
   );
 }
 
-function NonEditModeCompany(props) {
+function NonEditModeStatus(props) {
   return (
-    <div className="company-container">
-      <h3 className="card__company"> {props.company}</h3>
-      <button id="editButton" onClick={props.open_closeEdit}>
-        E
-      </button>
+    <div className="status-container">
+      <p>{props.status}</p>
+      <button onClick={props.open_closeEdit}>E</button>
     </div>
   );
 }
 
-export default function CompanySection(props) {
-  const [company, setCompany] = useState(props.company);
+export default function StatusSection(props) {
+  const [status, setStatus] = useState(props.status);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
-    const newCompany = document.getElementById('performEdit').value;
-    setCompany(newCompany);
-    console.log(newCompany, 'newCompany');
+    const newStatus = document.getElementById('performEdit').value;
+    setStatus(newStatus);
+    console.log(newStatus, 'newStatus');
     setEditMode(!editMode);
   };
   const open_closeEdit = (e) => {
@@ -45,8 +43,8 @@ export default function CompanySection(props) {
   };
   if (editMode) {
     return (
-      <EditModeCompany
-        company={company}
+      <EditModeStatus
+        status={status}
         performEdit={performEdit}
         open_closeEdit={open_closeEdit}
         editMode={editMode}
@@ -54,8 +52,8 @@ export default function CompanySection(props) {
     );
   }
   return (
-    <NonEditModeCompany
-      company={company}
+    <NonEditModeStatus
+      status={status}
       performEdit={performEdit}
       open_closeEdit={open_closeEdit}
       editMode={editMode}

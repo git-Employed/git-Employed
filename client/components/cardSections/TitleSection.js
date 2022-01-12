@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 function EditModeTitle(props) {
   return (
-    <form>
+    <form className="title-container">
       <input
         name="title"
         placeholder={props.title}
@@ -20,8 +20,8 @@ function EditModeTitle(props) {
 
 function NonEditModeTitle(props) {
   return (
-    <div>
-      <p>{props.title}</p>
+    <div className="title-container">
+      <p className="card__title">{props.title}</p>
       <button onClick={props.open_closeEdit}>E</button>
     </div>
   );
