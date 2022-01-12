@@ -47,18 +47,20 @@ export default function CardContainer() {
 
   return (
     <div id="cardList-container">
-      {interested.map((card) => {
-        return <InterestedCard card={card} />;
-      })}
-      {pending.map((card) => {
-        return <PendingCard card={card} />;
-      })}
-      {offered.map((card) => {
-        return <OfferedCard card={card} />;
-      })}
-      {archive.map((card) => {
-        return <ArchiveCard card={card} />;
-      })}
+      <React.StrictMode>
+        {interested.map((card, index) => {
+          return <InterestedCard card={card} key={index} />;
+        })}
+        {pending.map((card, index) => {
+          return <PendingCard card={card} key={index} />;
+        })}
+        {offered.map((card, index) => {
+          return <OfferedCard card={card} key={index} />;
+        })}
+        {archive.map((card, index) => {
+          return <ArchiveCard card={card} key={index} />;
+        })}
+      </React.StrictMode>
     </div>
   );
 }
