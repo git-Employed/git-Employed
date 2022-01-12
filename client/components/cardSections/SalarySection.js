@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 function EditModeSalary(props) {
   return (
-    <form>
+    <form className="salary-container">
       <input
         name="salary"
         placeholder={props.salary}
@@ -20,7 +20,7 @@ function EditModeSalary(props) {
 
 function NonEditModeSalary(props) {
   return (
-    <div>
+    <div className="salary-container">
       <p>{props.salary}</p>
       <button onClick={props.open_closeEdit}>E</button>
     </div>

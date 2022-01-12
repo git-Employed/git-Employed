@@ -5,7 +5,7 @@ export default function OfferedCard(props) {
   console.log(props.card);
   return (
     <div className="Offered-container">
-      <h1>Offered</h1>
+      <h1 id="offered-title">Offered</h1>
       {props.card.map((card) => {
         console.log(card);
         return <Cards card={card} key={card.card_id} />;

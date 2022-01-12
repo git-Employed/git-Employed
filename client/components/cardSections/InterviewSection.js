@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 function EditModeInterview(props) {
   return (
-    <form>
+    <form className='interview-container'>
       <input
         name="interview"
         placeholder={props.interview}
@@ -20,7 +20,7 @@ function EditModeInterview(props) {
 
 function NonEditModeInterview(props) {
   return (
-    <div>
+    <div className='interview-container'>
       <p>{props.interview}</p>
       <button onClick={props.open_closeEdit}>E</button>
     </div>
