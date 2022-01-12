@@ -71,9 +71,9 @@ cardController.deleteCards = async (req, res, next) => {
 cardController.putCards = async (req, res, next) => {
 	console.log("Hey, we are live from the put contoller!");
 	try {
-		//const res.parems
+		const card_id = req.params;
 		const { company, title, salary, location, vibe_check, status, interview } =
-			req.params;
+			req.body;
 
 		//const test = `UPDATE cards
 		//SET vibe_check = 'unfriendly'

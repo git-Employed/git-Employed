@@ -35,7 +35,7 @@ app.delete("/api/cards", cardController.deleteCards, (req, res) => {
 	return res.status(200).json(res.locals.goodbye);
 });
 
-app.put("/api/cards", cardController.putCards, (req, res) => {
+app.put("/api/cards/:card_giid", cardController.putCards, (req, res) => {
 	return res.status(200).json(res.locals.update);
 });
 
