@@ -16,10 +16,10 @@ export default function CardContainer() {
     //make sure to change this to whatever the data looks like
   }, [cardDetails.cards.isLoaded]);
 
-  console.log(
-    'console logging from Card Container',
-    cardDetails.cards.cardList
-  );
+  // console.log(
+  //   'console logging from Card Container',
+  //   cardDetails.cards.cardList
+  // );
   const interested = [];
   const pending = [];
   const offered = [];
