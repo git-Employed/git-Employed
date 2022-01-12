@@ -18,7 +18,7 @@ app.get("/cards", cardController.getCards, (req, res) => {
 });
 
 app.post("/cards", cardController.postCards, (req, res) => {
-	console.log(res.locals.jobPosting);
+	//console.log(res.locals.jobPosting);
 	return res.status(200).json(res.locals.jobPosting);
 });
 
