@@ -7,7 +7,7 @@ import modalReducer from './modalReducer';
 const reducers = combineReducers({
   // auth: authReducer,
   cards: cardReducer,
-  modal: modalReducer
+  // modal: modalReducer
 });
 
 export default reducers;
