@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateLocationActionCreator } from '../../actions/actions';
 function EditModeLocation(props) {
   return (
     <form className="location-container">
@@ -28,12 +30,14 @@ function NonEditModeLocation(props) {
 }
 
 export default function LocationSection(props) {
+  const dispatch = useDispatch();
   const [location, setLocation] = useState(props.vibeCheck);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
     const newLocation = document.getElementById('performEdit').value;
     setLocation(newLocation);
+    dispatch(updateLocationActionCreator(newLocation));
     console.log(newLocation, 'newLocation');
     setEditMode(!editMode);
   };

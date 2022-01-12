@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateStatusActionCreator } from '../../actions/actions';
+
 function EditModeStatus(props) {
   return (
     <form className="status-container">
@@ -28,12 +31,14 @@ function NonEditModeStatus(props) {
 }
 
 export default function StatusSection(props) {
+  const dispatch = useDispatch();
   const [status, setStatus] = useState(props.status);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
     const newStatus = document.getElementById('performEdit').value;
     setStatus(newStatus);
+    dispatch(updateStatusActionCreator(newStatus));
     console.log(newStatus, 'newStatus');
     setEditMode(!editMode);
   };

@@ -22,8 +22,15 @@ export default function Form() {
     dispatch(submitFormActionCreator(cardState))
     navigate('/homepage');
   }
+  const colors = [
+    'radial-gradient(#1fe4f5, #3fbafe)',
+    'radial-gradient(#fbc1cc, #fa99b2)',
+    'radial-gradient(#76b2fe, #b69efe)',
+    'radial-gradient(#60efbc, #58d5c9)',
+    'radial-gradient(#f588d8, #c0a3e5)',
+  ];
   return (
-    <div id="form-container">
+    <div id="form-container" style={{background: colors[Math.floor(Math.random() * 5)]}}>
       <label for="category">Choose a category:</label>
       <select name="category" id="category" className={'form-items'} onChange={(e) =>
         dispatch(enterStatusActionCreator(e.target.value))}>

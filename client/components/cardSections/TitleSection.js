@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateTitleActionCreator } from '../../actions/actions';
+
 function EditModeTitle(props) {
   return (
     <form className="title-container">
@@ -28,12 +31,14 @@ function NonEditModeTitle(props) {
 }
 
 export default function TitleSection(props) {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState(props.title);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
     const newTitle = document.getElementById('performEdit').value;
     setTitle(newTitle);
+    dispatch(updateTitleActionCreator(newTitle));
     console.log(newTitle, 'newTitle');
     setEditMode(!editMode);
   };

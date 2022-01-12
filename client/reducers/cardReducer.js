@@ -1,4 +1,4 @@
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import * as types from '../constants/actionTypes';
 
 const initalState = {

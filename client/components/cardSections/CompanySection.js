@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateCompanyActionCreator } from '../../actions/actions';
+
 function EditModeCompany(props) {
   return (
     <form className="company-container">
@@ -28,14 +31,17 @@ function NonEditModeCompany(props) {
     </div>
   );
 }
-
+//parent component
 export default function CompanySection(props) {
+  const dispatch = useDispatch();
   const [company, setCompany] = useState(props.company);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
     const newCompany = document.getElementById('performEdit').value;
     setCompany(newCompany);
+  //dispatch the newCompany to action
+    dispatch(updateCompanyActionCreator(newCompany));
     console.log(newCompany, 'newCompany');
     setEditMode(!editMode);
   };
