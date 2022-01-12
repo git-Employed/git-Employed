@@ -59,6 +59,11 @@ module.exports = {
 //deleting
 //DELETE FROM tasks WHERE card_id=4;
 
+//updating
+//UPDATE cards
+//SET vibe_check = 'unfriendly'
+//WHERE card_id = 4;
+
 //adding columns to an existing table
 // ALTER TABLE cards
 // ADD COLUMN company VARCHAR(50),
@@ -73,7 +78,7 @@ module.exports = {
 //ALTER TABLE cards
 //DROP COLUMN job_title;
 
-//updating the values in a column
+//updating
 //UPDATE cards
-//SET job_description = 'Front '
+//SET job_description = 'Front'
 //WHERE course_id = 3

@@ -9,23 +9,28 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, "../client")));
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
 	res.status(200).sendFile(path.join(__dirname, "../client/index.html"));
 });
-app.get("/cards", cardController.getCards, (req, res) => {
-	console.log(res.locals.cards);
+app.get("/api/cards", cardController.getCards, (req, res) => {
+	// console.log(res.locals.cards);
 	return res.status(200).json(res.locals.cards);
 });
 
-app.post("/cards", cardController.postCards, (req, res) => {
+app.post("/api/cards", cardController.postCards, (req, res) => {
 	//console.log(res.locals.jobPosting);
 	return res.status(200).json(res.locals.jobPosting);
 });
 
-app.delete("/cards", cardController.deleteCards, (req, res) => {
+app.delete("/api/cards", cardController.deleteCards, (req, res) => {
 	console.log(res.locals.goodbye);
 	return res.status(200).json(res.locals.goodbye);
 });
+
+// app.put("/api/cards", cardController.putCards, (req, res) => {
+// 	console.log(res.locals.goodbye);
+// 	return res.status(200).json(res.locals.goodbye);
+// });
 
 app.use((err, req, res, next) => {
 	const defaultErr = {

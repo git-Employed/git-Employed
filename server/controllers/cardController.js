@@ -8,9 +8,8 @@ cardController.getCards = (req, res, next) => {
 	const queryString = `SELECT * FROM cards`;
 	db.query(queryString)
 		.then((allCards) => {
-			// allCards.rows[0] will get you the spotify obj
 			res.locals.cards = allCards.rows;
-			console.log(res.locals.cards);
+			console.log("logging from get cards controller", res.locals.cards);
 			return next();
 		})
 		.catch((err) => {
@@ -22,10 +21,11 @@ cardController.getCards = (req, res, next) => {
 cardController.postCards = async (req, res, next) => {
 	console.log("we are here in post!");
 	try {
-		//console.log(req.body.company);
-		// const test = `INSERT INTO cards(company,title, salary, location, vibe_check,status, interview)
-		// VALUES('Instagram','Frontend Engineer', 170000,'Los Angeles','nice','interested','phone screen')
-		// returning *`;
+		//test to see if post works
+		//const test = `INSERT INTO cards(company,title, salary, location, vibe_check,status, interview)
+		//VALUES('Instagram','Frontend Engineer', 170000,'Los Angeles','nice','interested','phone screen')
+		//returning *`;
+
 		//to make dynamic
 		const company = req.body.company;
 		const title = req.body.title;
@@ -35,23 +35,17 @@ cardController.postCards = async (req, res, next) => {
 		const status = req.body.status;
 		const interview = req.body.interview;
 
-		const queryString = `INSERT INTO cards(company,title,location,status)
-		VALUES('${company}','${title}', '${location}','${status}') RETURNING *;`;
+		const query = `INSERT INTO cards(company, title, salary, location, vibe_check,status,interview)
+		 VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
 
-		//`INSERT INTO cards(company, title, salary, location, vibe_check,status,interview)
-		//VALUES($1) RETURNING *
-		// VALUES('${company}','${title}', '${salary}', '${location}','${vibe_check}','${status}', '${interview}')
-		//($1,$2,$3,$4,$5,$6,$7)
-		//'${company}','${title}', '${salary}', '${location}','${vibe_check}','${status}', '${interview}'
-		//'${company}','${title}', ${salary},'${location}','${vibe_check}','${status}','${interview}'
-		// const test = `INSERT INTO cards(company)
-		//  VALUES($1)
-		//  returning *`;
-		const result = await db.query(queryString, [
+		const result = await db.query(query, [
 			company,
 			title,
+			salary,
 			location,
+			vibe_check,
 			status,
+			interview,
 		]);
 		res.locals.jobPosting = result.rows;
 		return next();
@@ -71,4 +65,9 @@ cardController.deleteCards = async (req, res, next) => {
 		return next();
 	}
 };
+
+// cardController.putCards = async (req, res, next) => {
+// 	console.log("Hey, we live from the put contoller!");
+// };
+
 module.exports = cardController;
