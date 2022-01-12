@@ -1,8 +1,8 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require("path");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 const htmlPlugin = new HtmlWebPackPlugin({
-	template: "./client/index.html",
-	filename: "./index.html",
+  template: './client/index.html',
+  filename: './index.html',
 });
 module.exports = {
   entry: './client/index.js',
@@ -18,7 +18,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env','@babel/preset-react'] },
+        options: { presets: ['@babel/env', '@babel/preset-react'] },
       },
       {
         test: /\.css$/,

@@ -16,46 +16,51 @@ export default function CardContainer() {
     //make sure to change this to whatever the data looks like
   }, [cardDetails.cards.isLoaded]);
 
-  console.log("console logging from Card Container", cardDetails.cards.cardList);
+  console.log(
+    'console logging from Card Container',
+    cardDetails.cards.cardList
+  );
   const interested = [];
   const pending = [];
   const offered = [];
   const archive = [];
-  const interestedCards = cardDetails.cards.cardList.filter((card) => (
-    card.status.toLowerCase() === 'interested'
-  ));
+  const interestedCards = cardDetails.cards.cardList.filter(
+    (card) => card.status.toLowerCase() === 'interested'
+  );
   interested.push(interestedCards);
   // console.log(interestedCards);
 
-  const pendingCards = cardDetails.cards.cardList.filter((card) => (
-    card.status.toLowerCase() === 'pending'
-  ))
+  const pendingCards = cardDetails.cards.cardList.filter(
+    (card) => card.status.toLowerCase() === 'pending'
+  );
   pending.push(pendingCards);
 
-  const offeredCards = cardDetails.cards.cardList.filter((card) => (
-    card.status.toLowerCase() === 'offered'
-  ))
+  const offeredCards = cardDetails.cards.cardList.filter(
+    (card) => card.status.toLowerCase() === 'offered'
+  );
   offered.push(offeredCards);
 
-  const archiveCards = cardDetails.cards.cardList.filter((card) => (
-    card.status.toLowerCase() === 'archive'
-  ))
+  const archiveCards = cardDetails.cards.cardList.filter(
+    (card) => card.status.toLowerCase() === 'archive'
+  );
   archive.push(archiveCards);
 
   return (
-    <div id='cardList-container'>
-      {interested.map((card) => {
-        return <InterestedCard card={card} />
-      })}
-      {pending.map((card) => {
-        return <PendingCard card={card} />
-      })}
-      {offered.map((card) => {
-        return <OfferedCard card={card} />
-      })}
-      {archive.map((card) => {
-        return <ArchiveCard card={card} />
-      })}
+    <div id="cardList-container">
+      <React.StrictMode>
+        {interested.map((card, index) => {
+          return <InterestedCard card={card} key={index} />;
+        })}
+        {pending.map((card, index) => {
+          return <PendingCard card={card} key={index} />;
+        })}
+        {offered.map((card, index) => {
+          return <OfferedCard card={card} key={index} />;
+        })}
+        {archive.map((card, index) => {
+          return <ArchiveCard card={card} key={index} />;
+        })}
+      </React.StrictMode>
     </div>
-  )
+  );
 }
