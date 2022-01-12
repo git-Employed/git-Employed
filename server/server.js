@@ -9,10 +9,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, "../client")));
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
 	res.status(200).sendFile(path.join(__dirname, "../client/index.html"));
 });
-app.get("/cards", cardController.getCards, (req, res) => {
+app.get("/api/cards", cardController.getCards, (req, res) => {
 	// console.log(res.locals.cards);
 	return res.status(200).json(res.locals.cards);
 });
