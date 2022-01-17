@@ -69,7 +69,8 @@ export default function CompanySection(props) {
       title: props.cardInfo.title,
       salary: props.cardInfo.salary,
       location: props.cardInfo.location,
-      environment: props.cardInfo.environment,
+      vibe_check: props.cardInfo.vibe_check,
+      interview: props.cardInfo.interview,
       status: props.cardInfo.status
     }
     dispatch(updateCompanyActionCreator(test, props.cardInfo.card_id));

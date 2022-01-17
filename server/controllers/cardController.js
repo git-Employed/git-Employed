@@ -75,13 +75,7 @@ cardController.putCards = async (req, res, next) => {
 		const { company, title, salary, location, vibe_check, status, interview } =
 			req.body;
 
-		//const test = `UPDATE cards
-		//SET vibe_check = 'unfriendly'
-		//WHERE card_id = 4`;
-
-		//make post dynamic
-		const queryString = `UPDATE cards
-		SET company = $1, title = $2, salary = $3, location = $4, vibe_check = $5, status = $6, interview = $7 WHERE card_id = $8`;
+		const queryString = `UPDATE cards SET company = $1, title = $2, salary = $3, location = $4, vibe_check = $5, status = $6, interview = $7 WHERE card_id = $8`;
 
 		const result = await db.query(queryString, [
 			company,

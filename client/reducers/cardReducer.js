@@ -16,7 +16,7 @@ const initalState = {
 const cardReducer = (state = initalState, action) => {
   switch (action.type) {
     case types.GET_CARDS:
-      // console.log('logginf from the reducer', action.payload)
+      console.log('logginf from the reducer', action.payload)
       const changes = {
         ...state,
         cardList: action.payload,
@@ -60,7 +60,7 @@ const cardReducer = (state = initalState, action) => {
       // console.log(action.payload)
       const environment = {
         ...state,
-        environment: action.payload,
+        vibe_check: action.payload,
       };
       return environment;
 
