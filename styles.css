@@ -1,14 +1,28 @@
-body,
-html {
+body{
   margin: 0;
   /* height: 100vh; */
   width: 100vw;
+  background-color: black;
+  /* color: pink; */
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Volkhov', serif;
 }
 
-#app {
-  /* height: 100%; */
+#create-button {
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  color: black;
+  margin-left: 70px;
+  margin-bottom: 30px;
+}
+
+#add-card {
+  font-size: 20px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  color: black;
+  margin-top: 20px;
 }
 
 #cardList-container {
@@ -24,8 +38,14 @@ html {
   width: 100%;
 }
 
+.interested-title .pending-title .offered-title .archive-title {
+  color: rgb(118, 178, 254);
+}
+
 #title {
   text-align: center;
+  font-size: 50px;
+  margin-bottom: 0;
 }
 
 .Interested-container {
@@ -57,6 +77,32 @@ html {
 
 #form-container {
   text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+  border-radius: 12px;
+  padding: 30px 50px;
+}
+
+label{
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 250px;
+  text-align: right;
+  font-weight: 600;
+  margin-right: 10px;
+}
+input {
+display: inline-block;
+float: left;
+}
+
+textarea {
+  float: left;
+}
+
+select {
+  float: left;
 }
 
 #editButton {
@@ -137,21 +183,25 @@ p {
   max-width: fit-content;
   max-width: 100px;
   margin: 0 auto;
+  color: rgb(118, 178, 254);
 }
 #pending-title {
   max-width: fit-content;
   max-width: 100px;
   margin: 0 auto;
+  color: rgb(118, 178, 254);
 }
 #interested-title {
   max-width: fit-content;
   max-width: 100px;
   margin: 0 auto;
+  color: rgb(118, 178, 254);
 }
 #offered-title {
   max-width: fit-content;
   max-width: 100px;
   margin: 0 auto;
+  color: rgb(118, 178, 254);
 }
 
 .card-container:hover {

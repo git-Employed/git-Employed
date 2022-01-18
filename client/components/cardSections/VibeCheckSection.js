@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateEnvironmentActionCreator } from '../../actions/actions';
+
 function EditModeVibeCheckSection(props) {
   return (
     <form className="vibeCheck-container">
@@ -51,12 +54,14 @@ function NonEditModeVibeCheckSection(props) {
 }
 
 export default function VibeCheckSectionSection(props) {
+  const dispatch = useDispatch();
   const [vibeCheck, setVibeCheck] = useState(props.vibeCheck);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
     const newVibeCheck = document.getElementById('performEdit').value;
     setVibeCheck(newVibeCheck);
+    dispatch(updateEnvironmentActionCreator(newVibeCheck));
     console.log(newVibeCheck, 'newVibeCheck');
     setEditMode(!editMode);
   };

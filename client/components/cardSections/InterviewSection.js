@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateInterviewActionCreator } from '../../actions/actions';
 function EditModeInterview(props) {
   return (
     <form className="interview-container">
@@ -33,6 +35,7 @@ function EditModeInterview(props) {
 }
 
 function NonEditModeInterview(props) {
+  const dispatch = useDispatch();
   return (
     <div className="interview-container">
       <div className="interviewTextWrapper">
@@ -60,6 +63,7 @@ export default function InterviewSection(props) {
     e.preventDefault();
     const newInterview = document.getElementById('performEdit').value;
     setInterview(newInterview);
+    dispatch(updateInterviewActionCreator(setInterview));
     console.log(newInterview, 'newInterview');
     setEditMode(!editMode);
   };

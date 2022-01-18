@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateSalaryActionCreator } from '../../actions/actions'
+
 function EditModeSalary(props) {
   return (
     <form className="salary-container">
@@ -50,12 +53,14 @@ function NonEditModeSalary(props) {
 }
 
 export default function SalarySection(props) {
+  const dispatch = useDispatch();
   const [salary, setSalary] = useState(props.salary);
   const [editMode, setEditMode] = useState(false);
   const performEdit = (e) => {
     e.preventDefault();
     const newSalary = document.getElementById('performEdit').value;
     setSalary(newSalary);
+    dispatch(updateSalaryActionCreator(newSalary));
     console.log(newSalary, 'newSalary');
     setEditMode(!editMode);
   };
